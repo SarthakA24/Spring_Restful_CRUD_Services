@@ -27,6 +27,11 @@ public class StudentController {
         return new ResponseEntity<>(studentService.getData(), HttpStatus.OK);
     }
 
+    @GetMapping("/get/{id}")
+    public ResponseEntity<?> fetchById(@PathVariable int id) {
+        return new ResponseEntity<>(studentService.getDataById(id), HttpStatus.OK);
+    }
+
     @DeleteMapping("/delete-student/{id}")
     public ResponseEntity<?> deleteStudent(@PathVariable int id) {
         studentService.deleteData(id);
