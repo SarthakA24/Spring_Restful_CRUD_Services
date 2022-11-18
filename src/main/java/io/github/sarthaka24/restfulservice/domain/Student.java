@@ -55,11 +55,6 @@ public class Student {
 
     @Override
     public String toString() {
-        return "Student{" +
-                "rollNumber=" + rollNumber +
-                ", name='" + name + '\'' +
-                ", email='" + email + '\'' +
-                ", contactNumber=" + contactNumber +
-                '}';
+        return "Student{" + "rollNumber=" + rollNumber + ", name='" + name + '\'' + ", email='" + email + '\'' + ", contactNumber=" + contactNumber + '}';
     }
 }
