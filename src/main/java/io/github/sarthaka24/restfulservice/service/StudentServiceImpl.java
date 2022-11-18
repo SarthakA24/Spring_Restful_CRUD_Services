@@ -9,7 +9,7 @@ import java.util.List;
 
 @Service
 public class StudentServiceImpl implements IStudentService<Student> {
-    private StudentRepository studentRepository;
+    private final StudentRepository studentRepository;
 
     @Autowired
     public StudentServiceImpl(StudentRepository studentRepository) {
@@ -17,22 +17,17 @@ public class StudentServiceImpl implements IStudentService<Student> {
     }
 
     @Override
-    public boolean saveData(Student student) {
-        return false;
+    public Student saveData(Student student) {
+        return studentRepository.save(student);
     }
 
     @Override
-    public boolean deleteData(int id) {
-        return false;
-    }
-
-    @Override
-    public boolean updateData(Student student) {
-        return false;
+    public void deleteData(int id) {
+        studentRepository.deleteById(id);
     }
 
     @Override
     public List<Student> getData() {
-        return null;
+        return (List<Student>) studentRepository.findAll();
     }
 }
