@@ -1,6 +1,11 @@
 package io.github.sarthaka24.restfulservice.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Student {
+    @Id
     private int rollNumber;
     private String name;
     private String email;
