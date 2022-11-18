@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/api/v1")
 public class StudentController {
-    private IStudentService<Student> studentService;
+    private final IStudentService<Student> studentService;
 
     @Autowired
     public StudentController(IStudentService<Student> studentService) {
