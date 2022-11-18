@@ -1,9 +1,11 @@
 package io.github.sarthaka24.restfulservice.service;
 
 import io.github.sarthaka24.restfulservice.domain.Student;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class StudentServiceImpl implements IStudentService<Student> {
     @Override
     public boolean saveData(Student student) {
