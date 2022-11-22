@@ -27,7 +27,7 @@ public class StudentController {
         return new ResponseEntity<>(studentService.getData(), HttpStatus.OK);
     }
 
-    @GetMapping("/get/{id}")
+    @GetMapping("/get-by-id/{id}")
     public ResponseEntity<?> fetchById(@PathVariable int id) {
         return new ResponseEntity<>(studentService.getDataById(id), HttpStatus.OK);
     }
@@ -38,12 +38,12 @@ public class StudentController {
         return new ResponseEntity<>("Student Deleted Successfully!", HttpStatus.OK);
     }
 
-    @GetMapping("/get/{name}")
+    @GetMapping("/get-by-name/{name}")
     public ResponseEntity<?> fetchStudentByName(@PathVariable String name) {
         return new ResponseEntity<>(studentService.getByName(name), HttpStatus.OK);
     }
 
-    @GetMapping("/get/{startname}")
+    @GetMapping("/get-starts-with/{startname}")
     public ResponseEntity<?> fetchStudentNameStartsWith(@PathVariable String startname) {
         return new ResponseEntity<>(studentService.getByNameStartsWith(startname), HttpStatus.OK);
     }
