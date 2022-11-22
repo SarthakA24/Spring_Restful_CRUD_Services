@@ -34,12 +34,17 @@ public class StudentServiceImpl implements IStudentService {
 
     @Override
     public List<Student> getData() {
-        return (List<Student>) studentRepository.findAll();
+        return studentRepository.findAll();
     }
 
     @Override
     public List<Student> getByName(String name) {
         return studentRepository.findByName(name);
+    }
+
+    @Override
+    public List<Student> getByNameStartsWith(String name) {
+        return studentRepository.findByNameStartsWith(name);
     }
 
 }

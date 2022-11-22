@@ -15,4 +15,6 @@ public interface IStudentService {
     List<Student> getData();
 
     List<Student> getByName(String name);
+
+    List<Student> getByNameStartsWith(String name);
 }
