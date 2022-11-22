@@ -10,10 +10,10 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/api/v1")
 public class StudentController {
-    private final IStudentService<Student> studentService;
+    private final IStudentService studentService;
 
     @Autowired
-    public StudentController(IStudentService<Student> studentService) {
+    public StudentController(IStudentService studentService) {
         this.studentService = studentService;
     }
 
@@ -36,5 +36,10 @@ public class StudentController {
     public ResponseEntity<?> deleteStudent(@PathVariable int id) {
         studentService.deleteData(id);
         return new ResponseEntity<>("Student Deleted Successfully!", HttpStatus.OK);
+    }
+
+    @GetMapping("/get/{name}")
+    public ResponseEntity<?> fetchStudentByName(@PathVariable String name) {
+        return new ResponseEntity<>(studentService.getByName(name), HttpStatus.OK);
     }
 }
