@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class StudentServiceImpl implements IStudentService<Student> {
+public class StudentServiceImpl implements IStudentService {
     private final StudentRepository studentRepository;
 
     @Autowired
@@ -36,4 +36,10 @@ public class StudentServiceImpl implements IStudentService<Student> {
     public List<Student> getData() {
         return (List<Student>) studentRepository.findAll();
     }
+
+    @Override
+    public List<Student> getByName(String name) {
+        return studentRepository.findByName(name);
+    }
+
 }
