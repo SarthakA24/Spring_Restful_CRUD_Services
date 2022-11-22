@@ -42,4 +42,9 @@ public class StudentController {
     public ResponseEntity<?> fetchStudentByName(@PathVariable String name) {
         return new ResponseEntity<>(studentService.getByName(name), HttpStatus.OK);
     }
+
+    @GetMapping("/get/{startname}")
+    public ResponseEntity<?> fetchStudentNameStartsWith(@PathVariable String startname) {
+        return new ResponseEntity<>(studentService.getByNameStartsWith(startname), HttpStatus.OK);
+    }
 }
